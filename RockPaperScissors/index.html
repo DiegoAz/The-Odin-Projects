@@ -18,6 +18,42 @@
         }
         return computerPlay;
       }
+
+      function playRound(playerSelection, computerSelection) {
+        const player = playerSelection.toUpperCase();
+        const computer = computerSelection.toUpperCase();
+        const messagePlayerWinner = `You WIN! ${player} always beats ${computer}`;
+        const messageComputerWinner = `You LOSE! ${computer} always beats ${player}`;
+        const messageTie = `TIEEEE, you and the computer select ${player}`;
+        let message;
+        if (player === computer) {
+          message = messageTie;
+        } else if (player === 'PAPER') {
+          if (computer === 'SCISSORS') {
+            message = messageComputerWinner;
+          } else if (computer === 'ROCK') {
+            message = messagePlayerWinner;
+          }
+        } else if (player === 'SCISSORS') {
+          if (computer === 'ROCK') {
+            message = messageComputerWinner;
+          } else if (computer === 'PAPER') {
+            message = messagePlayerWinner;
+          }
+        } else if (player === 'ROCK') {
+          if (computer === 'PAPER') {
+            message = messageComputerWinner;
+          } else if (computer === 'SCISSORS') {
+            message = messagePlayerWinner;
+          }
+        }
+        return message;
+      }
+
+      const playerSelection = 'rock';
+      const computerSelection = computerPlay();
+      console.log(playRound(playerSelection, computerSelection));
+      
     </script>
   </body>
 </html>
