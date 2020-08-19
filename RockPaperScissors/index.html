@@ -51,9 +51,38 @@
       }
 
       const playerSelection = 'rock';
-      const computerSelection = computerPlay();
-      console.log(playRound(playerSelection, computerSelection));
-      
+      function game() {
+        var wins = 0;
+        var defeats = 0;
+        var ties = 0;
+        var result;
+        var summary;
+        for (let i = 0; i < 5; i++) {
+          let computerSelection = computerPlay();
+          var message = playRound(playerSelection, computerSelection);
+          console.log(message);
+          if (message.includes('WIN')) {
+            wins += 1;
+          } else if (message.includes('LOSE')) {
+            defeats += 1;
+          } else {
+            ties += 1;
+          }
+          if (wins == 3 || defeats == 3 || ties == 3) {
+            break;
+          }
+        }
+        summary = `\nSummary: ${wins}W ${defeats}D ${ties}T`;
+        if (wins >= 3) {
+          result = `You WIN! ${summary}`;
+        } else if (defeats >= 3) {
+          result = `You LOSE! ${summary}`;
+        } else {
+          result = `NO winner!. ${summary}`;
+        }
+        return result;
+      }
+      console.log(game());
     </script>
   </body>
 </html>
