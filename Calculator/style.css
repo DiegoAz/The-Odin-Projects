@@ -1,0 +1,82 @@
+body {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+div {
+  max-width: 500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    'out out out out'
+    'C C delete division'
+    'seven eight nine multiplication'
+    '4 5 6 subtract'
+    '1 2 3 addition'
+    'zero zero zero equal';
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05),
+    0px 20px 40px rgba(92, 103, 153, 0.2);
+}
+
+input {
+  grid-area: out;
+  padding: 10px 5px;
+  text-align: right;
+  background-color: #1f1f1f;
+  color: white;
+  font-size: 2em;
+  outline: none;
+}
+
+button {
+  padding: 20px 50px;
+  font-size: 2em;
+  background: white;
+  border: none;
+}
+
+button:hover {
+  background-color: #00c746;
+  color: white;
+}
+
+.symbol {
+  color: #00ba40;
+  /*background-color: #92e11e;*/
+}
+
+.symbol:hover {
+  background-color: #00c746;
+}
+
+button:nth-of-type(1) {
+  grid-area: C;
+}
+
+button:nth-of-type(2) {
+  grid-area: delete;
+}
+
+button:nth-of-type(3) {
+  grid-area: division;
+}
+
+button:nth-of-type(4) {
+  grid-area: seven;
+}
+
+button:nth-of-type(5) {
+  grid-area: eight;
+}
+
+button:nth-of-type(6) {
+  grid-area: nine;
+}
+
+button:nth-of-type(16) {
+  grid-area: zero;
+}
