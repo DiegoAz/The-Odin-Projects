@@ -1,1 +1,3 @@
 .DS_Store
+/Calculator/node_modules
+*.sublime-project
